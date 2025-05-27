@@ -37,9 +37,13 @@ public class S_Dashboard {
      */
     public ApiDashboardResponse getTickets(String mes, String ano) {
         // Recupera todos os tickets do mes e ano especificado e todos os clientes e modulos
-        List<M_Ticket> tickets = r_ticket.findAllTicketsFromMonthAndYear(mes, ano);
-        List<M_Cliente> clientes = r_cliente.findAll(Sort.by("id").ascending());
-        List<M_Modulo> modulos = r_modulo.findAll(Sort.by("id").ascending());
+        List<M_Ticket> tickets;
+        try {
+            tickets = r_ticket.findAllTicketsFromMonthAndYear(mes, ano);
+        }catch (Exception e){
+            System.out.println("Erro ao capturar tickets do banco de dados para o dashboard: " + e);
+            return null;
+        }
 
         List<DashboardDadosPorCliente> dadosClientes = new ArrayList<>();
         List<DashboardDadosPorModulo> dadosModulos = new ArrayList<>();

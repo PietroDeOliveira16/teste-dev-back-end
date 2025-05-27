@@ -39,7 +39,7 @@ public class S_Receitas {
                     jsonResponse.getRecipes()
             );
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println("Erro ao receber e devolver as informações da API do Forkify: " + e);
             return null;
         }
     }
