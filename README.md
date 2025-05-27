@@ -19,3 +19,7 @@ localhost:8080/api/dashboard/{titulo}-{id_cliente}-{id_modulo} *(ex.: localhost:
 ### **Problema 02 - API de Receitas**
 
 localhost:8080/api/receitas/{nome_do_prato} *(ex.: localhost:8080/api/receitas/pizza)*
+
+***
+
+Se algum endpoint devolver uma página em branco significa que algum erro ocorreu. Veja o console pra ler a mensagem de erro. 
